@@ -1,0 +1,97 @@
+# Membuat file HTML untuk website "Sejarah Indonesia" dengan tema minimalis
+html_sejarah = """
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Sejarah Indonesia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background-color: #1a1a1a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sejarah Indonesia</h1>
+    <p>Dari Presiden Pertama hingga Ketujuh</p>
+  </header>
+  <main>
+    <section>
+      <h2>Presiden 1: Soekarno</h2>
+      <p>Soekarno adalah proklamator dan presiden pertama Indonesia (1945–1967). Ia memimpin perjuangan kemerdekaan dan menjadi tokoh penting dalam pergerakan nasional.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Presiden_Sukarno.jpg" alt="Presiden Soekarno">
+    </section>
+    <section>
+      <h2>Presiden 2: Soeharto</h2>
+      <p>Soeharto menjabat selama 31 tahun (1967–1998). Ia dikenal dengan masa Orde Baru dan pembangunan ekonomi yang stabil, namun juga dengan pemerintahan yang otoriter.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/President_Suharto_-_Indonesia.jpg" alt="Presiden Soeharto">
+    </section>
+    <section>
+      <h2>Presiden 3–7</h2>
+      <p>B.J. Habibie (1998–1999), Abdurrahman Wahid (1999–2001), Megawati Soekarnoputri (2001–2004), Susilo Bambang Yudhoyono (2004–2014), dan Joko Widodo (2014–sekarang) masing-masing membawa warna dan kebijakan tersendiri dalam demokrasi dan pembangunan nasional.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Presiden_RI_Joko_Widodo.jpg" alt="Presiden Joko Widodo">
+    </section>
+    <button onclick="alert('Terima kasih telah membaca sejarah Indonesia!')">Klik untuk Menghargai Sejarah</button>
+  </main>
+</body>
+</html>
+"""
+
+# Simpan file dan buat zip-nya
+html_path_sejarah = "/mnt/data/index.html"
+with open(html_path_sejarah, "w") as f:
+    f.write(html_sejarah)
+
+zip_path_sejarah = "/mnt/data/sejarah-indonesia.zip"
+with ZipFile(zip_path_sejarah, 'w') as zipf:
+    zipf.write(html_path_sejarah, arcname="index.html")
+
+zip_path_sejarah
